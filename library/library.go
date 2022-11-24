@@ -15,3 +15,14 @@ type Pelajar struct {
 	Nama  string
 	Kelas int
 }
+
+var Mahasiswa = struct {
+	Kampus  string
+	Jurusan string
+}{}
+
+func init() {
+	Mahasiswa.Kampus = "UMY"
+	Mahasiswa.Jurusan = "HI"
+	fmt.Println("library.go has been loaded")
+}
