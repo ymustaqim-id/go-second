@@ -36,6 +36,6 @@ func main() {
 
 	fmt.Println("luas", bangunDatar.luas())
 	fmt.Println("keliling", bangunDatar.keliling())
-	fmt.Println("jari-jari", (bangunDatar).keliling()
+	fmt.Println("jari-jari", (bangunDatar).keliling())
 	fmt.Println("interface------------------------------")
 }
