@@ -1,6 +1,10 @@
 package main
 
-import "math"
+import (
+	"fmt"
+	"math"
+	"reflect"
+)
 
 type hitung interface {
 	luas() float64
@@ -32,4 +36,25 @@ func (p persegi) luas() float64 {
 
 func (p persegi) keliling() float64 {
 	return p.sisi * 4
+}
+
+type pelajarMahasiswa struct {
+	NamaKampus     string
+	JumlahFakultas int
+}
+
+func (p *pelajarMahasiswa) getPropertyInfo() {
+	var ambilNilai = reflect.ValueOf(p)
+
+	if ambilNilai.Kind() == reflect.Ptr {
+		ambilNilai = ambilNilai.Elem()
+	}
+	var ambilNilaiType = ambilNilai.Type()
+
+	for i := 0; i < ambilNilaiType.NumField(); i++ {
+		fmt.Println("nama", ambilNilai.Field(i))
+		fmt.Println("type", ambilNilai.Field(i).Type())
+		fmt.Println("nilai", ambilNilai.Field(i).Interface())
+		fmt.Println("")
+	}
 }
